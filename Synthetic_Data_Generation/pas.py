@@ -9,7 +9,7 @@ from pyapep.simsep import column
 R = 8.3145
 
 
-def lhs_sampling(bounds, n_samples=100, seed=30):
+def lhs_sampling(bounds, n_samples=100, seed=50):
     rng = np.random.default_rng(seed)
     keys = list(bounds.keys())
     samples = np.zeros((n_samples, len(keys)))
@@ -579,7 +579,7 @@ def generate_synthetic_dataset(
     n_samples=100,
     n_cycles=10,
     output_csv="mg_mof74_pretreated_psa_lhs.csv",
-    seed=30,
+    seed=50,
     include_invalid=False,
 ):
     bounds = {
@@ -702,8 +702,8 @@ if __name__ == "__main__":
     df = generate_synthetic_dataset(
         n_samples=100,
         n_cycles=10,
-        output_csv="seed30.csv",
-        seed=30,
+        output_csv="seed50.csv",
+        seed=50,
         include_invalid=False,
     )
     print(df.head())
